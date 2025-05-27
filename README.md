@@ -17,6 +17,14 @@ Run from the root directory of the project.
 python main.py -c cfg/data.yaml
 ```
 
+## Saving disk space
+Consider using symbolic links to link dataset to this project to save on disk space if you just need a quick visualization. On Ubuntu, 
+
+```
+ln -s [path to folder] [target name]
+```
+
+To point it into the data folder for a dataset (ImageNet), you can replace target name with data/ImageNet. Leaving it blank will fill it with the current folder name.
 
 ## TODOs:
 From the folder and annotations, can export the folder into another annotation format (i.e. COCO/YOLO)
