@@ -4,6 +4,10 @@ import argparse
 
 from blocks.folder import Folder
 
+SUPPORTED_FOLDERS = {
+    'Folder': Folder
+}
+
 def load_config(config_path):
     config_path = Path(config_path).resolve()
     with open(config_path, 'r') as f:
@@ -23,7 +27,12 @@ def load_config(config_path):
         else:
             output_path = root / output
 
+    folder_type = cfg.get("folder_type", "Folder")
+    recursive = cfg.get("recursive_image_folder", True)
+
     return {
+        'folder_type': folder_type,
+        'recursive': recursive,
         'image_folder': image_folder,
         'annotation_folder': annotation_folder,
         'output_folder': output_path,
@@ -37,5 +46,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     config = load_config(args.config)
-    folder = Folder(**config)
+    folder_type = SUPPORTED_FOLDERS.get(config['folder_type'], Folder)
+    folder = folder_type(**config)
     folder.annotate_images()

@@ -4,7 +4,7 @@
 Works with annotation formats xywh, cxcywhn, and inclusion of class and confidence. xywh and ltwh are treated as equivalent.
 
 ## Supporting other annotation types
-Inherit from the Folder class and manipulate the _ingest_images and _ingest_annotations function to fit your annotation format.
+Inherit from the Folder class and manipulate the _ingest_images and _ingest_annotations function to fit your annotation format. Update the SUPPORTED_FORMATS in main.py
 
 ## Using your dataset
 Update the data.yaml to include root (main directory for the data), image (relative path to root where the images exist), annotation (relative path to the annotation file or folder containing the annotations), and output (include ./ or ../ to have relative pathing to the cwd, or drop the ./ or ../ to have relative to the root, or absolute pathing).

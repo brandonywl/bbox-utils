@@ -1,4 +1,10 @@
 root: 'data/your_data_folder'
-image: 'images'
-annotation: 'annotations.json'
 output: 'visualisation'
+folder_type: 'Folder'
+
+image: 'images'
+recursive_image_folder: true
+
+annotation: 'annotations.json'
+
+

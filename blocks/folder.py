@@ -19,7 +19,7 @@ class Folder:
     IMAGE_FORMATS = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.tif', '.webp', '.ppm', '.pgm', '.ico']
     ANNOTATION_FORMATS = ['.txt', '.json', '.csv', '.xml']
 
-    def __init__(self, image_folder, annotation_folder, annotation_format, output_folder=None, recursive=True):
+    def __init__(self, image_folder, annotation_folder, annotation_format, output_folder=None, recursive=True, **kwargs):
         self.image_folder = Path(image_folder)
         self.annotation_folder = Path(annotation_folder)
         self.output_folder = Path(output_folder) if output_folder else None
