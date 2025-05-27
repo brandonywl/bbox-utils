@@ -1,0 +1,4 @@
+root: 'data/your_data_folder'
+image: 'images'
+annotation: 'annotations.json'
+output: 'visualisation'
